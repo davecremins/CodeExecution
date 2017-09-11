@@ -10,5 +10,5 @@ class Timer:
         self.elapsed = self.end - self.start
 
     @property
-    def elapsed_in_secs(self):
-        return round(self.elapsed, 2)
+    def elapsed_in_secs(self, precision=2):
+        return round(self.elapsed, precision)
