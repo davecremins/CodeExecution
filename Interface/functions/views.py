@@ -3,4 +3,9 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the functions index.")
+    if request.method == 'POST':
+        print('Ready for execution')
+    return resource(request)
+
+def resource(request):
+    return render(request, 'home.html')

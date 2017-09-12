@@ -1,6 +1,6 @@
 from timeit import default_timer as timer
 
-class CommandTimer:
+class TimeCommand:
     def __init__(self, print_log=True, output_precision=2):
         self.print_log = print_log
         self.output_precision = output_precision
@@ -16,7 +16,7 @@ class CommandTimer:
 
     def log_time(self):
         if(self.print_log):
-            print(f'Command lasted: {self.elapsed_in_secs} secs')
+            print(f'Command executed in: {self.elapsed_in_secs} secs')
 
     @property
     def elapsed_in_secs(self):

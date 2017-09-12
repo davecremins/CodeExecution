@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="text-center">
+  {% load staticfiles %}
+  <br>
+  <img src="http://media.django.es.s3.amazonaws.com/nuevo/images/djangopony.png">
+  <br>
+</div>
+
+<form action="/" method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="sel1">Select language:</label>
+    <select class="form-control" id="langSelect">
+        <option>Python</option>
+        <option>JavaScript</option>
+        <option>Go</option>
+    </select>
+    <label for="comment">Code:</label>
+    <textarea class="form-control" rows="8" id="code"></textarea>
+  </div>
+  <input type="submit" class="btn btn-success btn-lg btn-block" value="Submit">
+</form>
+
+{% endblock content %}
