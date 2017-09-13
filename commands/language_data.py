@@ -18,7 +18,7 @@ javascript_container_name = 'node'
 javascript_compiler = 'node'
 javascript_file = 'function.js'
 javascript_data = {
-    'file_name': 'function.js',
+    'file_name': javascript_file,
     'default_code': "console.log('Hello from within the javascript container')",
     'command': buildCommand(javascript_container_name, javascript_compiler, javascript_file)
 }
@@ -26,9 +26,9 @@ javascript_data = {
 go_container_name = 'golang'
 go_compiler = 'go'
 go_exec = 'run'
-go_file = 'main.go'
+go_file = 'function.go'
 go_data = {
-    'file_name': 'main.go',
+    'file_name': go_file,
     'default_code': """
 package main
 import "fmt"
