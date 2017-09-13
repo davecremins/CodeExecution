@@ -16,9 +16,4 @@ if(__name__ == '__main__'):
     writeFile(cwd=cwd, file_name=python.get('file_name'))
 
     with TC():
-        # execute_cmd(["docker", "run", "--name", "python_and_docker" ,"--rm", "-it", "python_and_docker", "/bin/bash"])
-        # execute_cmd(["docker", "run", "--rm", "-it", "-v", f"{os.getcwd()}:/usr/src/app", "-w", "/usr/src/app", "python_and_docker", "python", "-c", "print('Hello from within the container')"])
-        # execute_cmd(["docker", "run", "--rm", "-it", "-v", f"{cwd}:/usr/src/app", "-w", "/usr/src/app", "python_and_docker", "python", "./function.py"])
         execute_cmd(python.get('command')(cwd))
-        # execute_cmd(["docker", "run", "--rm", "-it", "-v", f"{cwd}:/usr/src/app/", "-w", "/usr/src/app", "python_and_docker", "/bin/bash"])
-        # execute_cmd(["docker", "run", "-it", "-v", f"{cwd}:/usr/src/app", "python_and_docker", "bin/bash/"])
