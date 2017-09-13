@@ -1,7 +1,7 @@
 import os
 from subprocess import call
 from utilities.timer import TimeCommand as TC
-from commands.language_data import python_data as python
+from commands.language_data import go_data as python
 
 def execute_cmd(command=["ls", "-a"]):
     call(command)
@@ -13,7 +13,7 @@ def writeFile(*, cwd, file_name):
 
 if(__name__ == '__main__'):
     cwd = os.getcwd()
-    writeFile(cwd=cwd, file_name='function.py')
+    writeFile(cwd=cwd, file_name=python.get('file_name'))
 
     with TC():
         # execute_cmd(["docker", "run", "--name", "python_and_docker" ,"--rm", "-it", "python_and_docker", "/bin/bash"])
