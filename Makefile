@@ -1,6 +1,10 @@
 PD = 'python_and_docker'
 DI = 'django_interface'
 
+images:
+	@docker pull node
+	@docker pull python
+	@docker pull golang
 build-python:
 	@docker build -t ${PD} .
 python:
