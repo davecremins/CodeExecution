@@ -1,6 +1,10 @@
 from timeit import default_timer as timer
 
-class Timer:
+class TimeCommand:
+    def __init__(self, print_log=True, output_precision=2):
+        self.print_log = print_log
+        self.output_precision = output_precision
+
     def __enter__(self):
         self.start = timer()
         return self
@@ -8,7 +12,12 @@ class Timer:
     def __exit__(self, *args):
         self.end = timer()
         self.elapsed = self.end - self.start
+        self.log_time()
+
+    def log_time(self):
+        if(self.print_log):
+            print(f'Command executed in: {self.elapsed_in_secs} secs')
 
     @property
-    def elapsed_in_secs(self, precision=2):
-        return round(self.elapsed, precision)
+    def elapsed_in_secs(self):
+        return round(self.elapsed, self.output_precision)
